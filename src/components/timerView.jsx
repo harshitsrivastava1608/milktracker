@@ -1,5 +1,5 @@
 
-import { useEffect, useState ,useRef} from "react";
+import { useEffect, useState, useRef } from "react";
 import TextButton from "@/components/textButton";
 import { handleSubmit } from "@/services/addSession";
 
@@ -22,10 +22,12 @@ export default function TimerView() {
     const handleInput = () => {
         const value = prompt("Please enter your name:");
         if (value !== null && value.trim() !== "") {
-            handleSubmit({ start_time: startTime,
-                 end_time: endTime==-1?new Date().toISOString():endTime,
-                  duration: Math.floor(time / 1000),
-                  milk_quantity:value })
+            handleSubmit({
+                start_time: startTime,
+                end_time: endTime == -1 ? new Date().toISOString() : endTime,
+                duration: Math.floor(time / 1000),
+                milk_quantity: value
+            })
             alert(`Sumitted Session Data Successfully, ${value}!`);
         } else {
             alert("No name entered.");
@@ -42,7 +44,7 @@ export default function TimerView() {
     };
 
     const pauseTimer = () => {
-        pauseAudio()
+        timerOn ? pauseAudio() : playAudio()
         setInitialTime(Date.now() - time);
         setTimerOn(!timerOn);
         console.log("pauseTimer", timerOn, time);
@@ -75,9 +77,7 @@ export default function TimerView() {
     return (
         <>
             <div className="flex-1 flex items-center justify-center">
-
-                <h1>Timer: {Math.floor(time / 1000)}s</h1>
-        
+                <h1 className="text-6xl font-bold">Timer: {Math.floor(time / 1000)}s</h1>
             </div>
             <audio ref={audioRef} src="/audio/Moon-Waltz.mp3" preload="auto" />
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center mb-4">
