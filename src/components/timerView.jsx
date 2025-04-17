@@ -76,8 +76,8 @@ export default function TimerView() {
         <>
             <div className="flex-1 flex items-center justify-center">
 
-                Timer: {Math.floor(time / 1000)}s
-                $$   {startTime}-{endTime}
+                <h1>Timer: {Math.floor(time / 1000)}s</h1>
+        
             </div>
             <audio ref={audioRef} src="/audio/Moon-Waltz.mp3" preload="auto" />
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center mb-4">
