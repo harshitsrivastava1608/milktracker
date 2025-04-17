@@ -1,7 +1,9 @@
+import { SAVE_SESSION_URI } from "@/types/apiUrls";
+
 export const handleSubmit = async (props) => {
     try {
         console.log('data',props)
-      const response = await fetch('/saveSession', {
+      const response = await fetch(SAVE_SESSION_URI, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

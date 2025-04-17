@@ -26,7 +26,7 @@ export default function TimerView() {
                  end_time: endTime==-1?new Date().toISOString():endTime,
                   duration: Math.floor(time / 1000),
                   milk_quantity:value })
-            alert(`Hello, ${value}!`);
+            alert(`Sumitted Session Data Successfully, ${value}!`);
         } else {
             alert("No name entered.");
         }
@@ -42,6 +42,7 @@ export default function TimerView() {
     };
 
     const pauseTimer = () => {
+        pauseAudio()
         setInitialTime(Date.now() - time);
         setTimerOn(!timerOn);
         console.log("pauseTimer", timerOn, time);
