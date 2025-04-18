@@ -21,6 +21,13 @@ export default function History() {
     getData()
   }, [])
 
+  const getISTDateTimeISO = (isoDate)=> {
+    const istDate = new Date(isoDate).toLocaleString("en-IN", {
+      timeZone: "Asia/Kolkata",
+      hour12: false,
+    });
+    return istDate
+  }
 
   return (
     <>List Of History
@@ -43,9 +50,9 @@ export default function History() {
 
               {sessionData.map((sessionData, index) => (
                 <tr key={index} className="hover:bg-gray-50">
-                  <td className="p-2 border-b">{sessionData.createdAt}</td>
-                  <td className="p-2 border-b">{sessionData.start_time}</td>
-                  <td className="p-2 border-b">{sessionData?.end_time}</td>
+                  <td className="p-2 border-b">{getISTDateTimeISO(sessionData.createdAt)}</td>
+                  <td className="p-2 border-b">{getISTDateTimeISO(sessionData.start_time)}</td>
+                  <td className="p-2 border-b">{getISTDateTimeISO(sessionData?.end_time)}</td>
                   <td className="p-2 border-b">{sessionData?.duration}</td>
                   <td className="p-2 border-b">{sessionData?.milk_quantity}</td>
                 </tr>

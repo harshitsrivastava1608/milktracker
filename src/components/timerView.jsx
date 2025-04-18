@@ -20,7 +20,7 @@ export default function TimerView() {
     };
 
     const handleInput = () => {
-        const value = prompt("Please enter your name:");
+        const value = prompt("Please enter the milk amount in Litres:");
         if (value !== null && value.trim() !== "") {
             handleSubmit({
                 start_time: startTime,
@@ -28,7 +28,7 @@ export default function TimerView() {
                 duration: Math.floor(time / 1000),
                 milk_quantity: value
             })
-            alert(`Sumitted Session Data Successfully, ${value}!`);
+            alert(`Sumitted Milk Session Data Successfully!, ${value}!`);
         } else {
             alert("No name entered.");
         }
