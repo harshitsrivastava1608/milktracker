@@ -28,7 +28,7 @@ export default function TimerView() {
                 duration: Math.floor(time / 1000),
                 milk_quantity: value
             })
-            alert(`Sumitted Milk Session Data Successfully!, ${value}!`);
+            alert(`Sumitted Milk Session Data Successfully!, ${value}Litres!`);
         } else {
             alert("No name entered.");
         }

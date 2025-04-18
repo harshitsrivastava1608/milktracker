@@ -39,8 +39,8 @@ export default function History() {
                 <th className="text-left p-2 border-b">Date</th>
                 <th className="text-left p-2 border-b">Start Time</th>
                 <th className="text-left p-2 border-b">End Time</th>
-                <th className="text-left p-2 border-b">Duration</th>
-                <th className="text-left p-2 border-b">Milk Collected</th>
+                <th className="text-left p-2 border-b">Duration(seconds)</th>
+                <th className="text-left p-2 border-b">Milk Collected(Litres)</th>
               </tr>
             </thead>
 
